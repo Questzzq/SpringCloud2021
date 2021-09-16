@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.vivian.springcloud.dao.PaymentDao">
+
+    <insert id="create" parameterType="com.vivian.springcloud.entities.Payment">
+        insert into payment (`serial`) values (#{payment.serial})
+    </insert>
+
+    <select id="getPaymentById" resultType="com.vivian.springcloud.entities.Payment">
+        select a.id, a.serial
+        from payment a
+        where a.id = #{id}
+    </select>
+
+
+</mapper>
